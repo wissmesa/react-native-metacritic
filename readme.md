@@ -29,6 +29,23 @@ NOTAS
 
 link en caso de ayuda : https://docs.expo.dev/router/installation/
 
+- para usar un boton o algun componente dentro de un Link se debe colocar la prop de asChild
+
+**ESTILAR**
+
+- Se pueden agregar estilos a los botones al momento de ser presionados, ocurren que si queremos agregar tailwind necesitamos primero crearlo con styled, asi como MUI y despues aplicar los estilos, y sin tailwind podria ser utilizando el estado de pressable que seria asi :
+  <!-- {({ pressed }) => <HomeIcon color={pressed ? "red" : "white"} />} -->
+
+**RUTAS**
+
+- Para generar rutas dinamica se hace igual que en next o react, se colocan los componentes de Link y la ruta que deseamos ir, para que sean dinamica se coloca con el formato de [variable].js y en caso de tener varios parametros
+  seria (...variable).js
+- a su vez estabamos usando el componente llamado SLOT para renderizar los componentes hijos algo parecido al child, en este caso se debe usar STACK(pila), en react native las rutas se guardan como una pila que se acumulan
+  esto a su vez agrega una UI propia que puede ser estilizada y tiene props para los headers etc.
+
+**LIBRERIAS**
+
+- https://icons.expo.fyi/Index para iconos
   <!-- {/* <Text style={{ color: "#fff" }}>Titulo</Text> */}
       {/* ---------  BOTON QUE FUNCIONA NATIVO PARA TODOS------------- */}
       {/* <Button
