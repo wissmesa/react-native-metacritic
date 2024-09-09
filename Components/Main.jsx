@@ -6,6 +6,7 @@ import { AnimatedGameCard, Gamecard } from "./Gamecard/Gamecard";
 import { Logo } from "./LogoSVG/Logo";
 import { Link } from "expo-router";
 import { CircleInfoIcon } from "./Icons/Icons";
+import Screen from "./Screen/Screen";
 export function Main() {
   const [games, setgames] = useState([])
   const insets = useSafeAreaInsets()
@@ -18,20 +19,7 @@ export function Main() {
 
   return (
     <>
-      <View className='bg-black ' style={{  paddingBottom: insets.bottom }} >
-        {/* <View className='flex-row justify-between items-center mx-2 mb-4 '>
-          <View >
-            <Logo />
-          </View>
-
-          <Link href="/about" asChild>
-            <Pressable>
-              <CircleInfoIcon/>
-            </Pressable>
-          </Link>
-        </View> */}
-
-
+      <Screen style={{  paddingBottom: insets.bottom }} >
         {games.length === 0 ?
           <ActivityIndicator color={'#fff'} size={"large"} /> :
           <FlatList
@@ -40,7 +28,7 @@ export function Main() {
             renderItem={({ item: game, index }) => <AnimatedGameCard game={game} index={index} />}
           ></FlatList>
         }
-      </View>
+      </Screen>
     </>
   );
 }
